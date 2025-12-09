@@ -5,7 +5,7 @@
 The goal is to master modern JS syntax (ES6+) and the key differences from Java's structure.
 
   * **Syntax & Variables:**
-      * [ ] Understand the difference between **`var`**, **`let`**, and **`const`** (focus on block scoping).
+      * [x] Understand the difference between **`var`**, **`let`**, and **`const`** (focus on block scoping).
       * [ ] Practice **Template Literals** (backticks \`\`) for string interpolation.
       * [ ] Define and understand primitive types (`number`, `string`, `boolean`, `null`, `undefined`).
   * **Functions & Scope:**
