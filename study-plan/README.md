@@ -6,8 +6,9 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
 
   * **Syntax & Variables:**
       * [x] Understand the difference between **`var`**, **`let`**, and **`const`** (focus on block scoping).
-      * [ ] Practice **Template Literals** (backticks \`\`) for string interpolation.
-      * [ ] Define and understand primitive types (`number`, `string`, `boolean`, `null`, `undefined`).
+      * [x] Practice **Template Literals** (backticks \`\`) for string interpolation.
+      * [x] Define and understand primitive types (`number`, `string`, `boolean`, `null`, `undefined`).
+      * [x] `==` v.s. `===`. Avoid `==`, mostly for checking null. The loose equality operator performs type coercion before making the comparison
   * **Functions & Scope:**
       * [ ] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
       * [ ] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions.
