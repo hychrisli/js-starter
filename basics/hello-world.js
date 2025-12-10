@@ -103,3 +103,52 @@ console.log(nullValue == null)
 console.log(nullValue === null)
 console.log(nullValue == undefined)
 console.log(nullValue === undefined)
+
+console.log("\n conditions \n")
+const v = false
+const w = true
+if (v) {
+  console.log("Got v true here")
+} else if (w) {
+  console.log("Got w true here")
+} else {
+  console.log("all false")
+}
+
+
+const code = 2
+
+let message;
+switch (code) {
+  case 1: message = "yes"; break;
+  case 2: message = "no"; break;
+  default: "ok";
+}
+
+console.log(message)
+
+function isTruthy(x) {
+  if (x) {
+    console.log(`[${x}] is truthy`)
+  } else {
+    console.log(`[${x}] is false`)
+  }
+}
+
+isTruthy(false)
+isTruthy(true)
+isTruthy(0)
+isTruthy(1)
+isTruthy(-1)
+isTruthy("")
+isTruthy('')
+isTruthy(``)
+isTruthy(" ")
+isTruthy("false")
+isTruthy([])
+isTruthy({})
+isTruthy(null)
+isTruthy(undefined)
+isTruthy(Infinity)
+isTruthy(Infinity / -Infinity)
+
