@@ -11,8 +11,8 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [x] `==` v.s. `===`. Avoid `==`, mostly for checking null. The loose equality operator performs type coercion before making the comparison
       * [x] conditions `if`, `else`, `switch`
   * **Functions & Scope:**
-      * [ ] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
-      * [ ] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions.
+      * [X] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
+      * [x] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions.
       * [ ] Define and demonstrate **closures** (a function retaining access to its parent's scope).
   * **Data Structures & Manipulation:**
       * [ ] Create objects using **Object Literals** (`{}`).
