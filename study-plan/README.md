@@ -6,14 +6,17 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
 
   * **Syntax & Variables:**
       * [x] Understand the difference between **`var`**, **`let`**, and **`const`** (focus on block scoping).
+      * [x] the "leak" of `var`: if you declare a variable using var inside any pair of curly braces that is not a function body, that variable will "leak" out into its nearest containing function (or the global scope, if it's not inside any function).
       * [x] Practice **Template Literals** (backticks \`\`) for string interpolation.
       * [x] Define and understand primitive types (`number`, `string`, `boolean`, `null`, `undefined`).
       * [x] `==` v.s. `===`. Avoid `==`, mostly for checking null. The loose equality operator performs type coercion before making the comparison
       * [x] conditions `if`, `else`, `switch`
   * **Functions & Scope:**
       * [X] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
-      * [x] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions.
-      * [ ] Define and demonstrate **closures** (a function retaining access to its parent's scope).
+      * [x] What is Lexical Scope v.s. Dynamic scope (Bash)
+      * [x] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions. Regular function creates its own `this`, determined by the call side. Arrow function does not have its own `this`, its `this` is from the lexical scope.
+
+      * [x] Define and demonstrate **closures** (a function retaining access to its parent's scope). A closure is a function bundled together with references to its surrounding state (lexical environment). A closure allows an **inner function** to retain access to the scope of its **parent function**, even after the parent function has finished executing and its execution context has been popped off the stack.
   * **Data Structures & Manipulation:**
       * [ ] Create objects using **Object Literals** (`{}`).
       * [ ] Arrays, Maps, and Sets

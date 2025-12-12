@@ -62,7 +62,7 @@ const Greeter = {
       // (or undefined in strict mode), NOT the Greeter object.
       console.log("Regular Function Callback `this.message`:", this.message);
       // Output: Regular Function Callback this.message: undefined (or "Hello!" if 'message' is a global variable)
-    }, 100);
+    }, 1);
   }
 };
 
@@ -77,8 +77,50 @@ const GreeterArrow = {
     console.log("Outer2 `this.message`:", this.message);
     setTimeout(() => {
       console.log("arrow function `this.message`:", this.message);
-    }, 100)
+    }, 1)
   }
 }
 
 GreeterArrow.startGreeting();
+
+
+// write a closure to get and set some value
+function somePerson(firstName) {
+  let myName = firstName;
+
+  return function setName(name) {
+    console.log("My name was: " + myName);
+    myName = name;
+    console.log("My name is now: " + myName);
+    // console.log("my name is now" + this.myName); // undefined, because this is defined by the caller
+  }
+
+}
+
+const person = somePerson("Cliff");
+person("Chris");
+person("Josh");
+
+
+// closure with arrow function
+
+function arrowPerson(firstName) {
+  let myName = firstName;
+
+  return (name) => {
+    console.log("My name was: " + myName);
+    myName = name;
+    console.log("My name is now: " + myName);
+    // console.log("my name is now" + this.myName); // undefined still
+    /*
+      Arrow functions inherit this from their surroundings.
+      However, the "surroundings" of a normal function call usually have a this that points to the window or undefined.
+      Local variables (let, const) are never properties of this.
+    */
+  }
+
+}
+
+const arrowP = arrowPerson("Justin");
+arrowP("Hugh");
+arrowP("James");

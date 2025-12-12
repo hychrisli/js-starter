@@ -8,7 +8,7 @@ function checkVarScope() {
     var greeting = "Hello there from inside if";
     let noGreeting = "this is only inside block";
   }
-  console.log(greeting)
+  console.log(greeting) // The "leak" of var
   // console.log(noGreeting), this will throw an error ReferenceError: noGreeting is not defined
 }
 
@@ -31,6 +31,71 @@ function checkBlockScope() {
 
 checkBlockScope();
 
+
+
+// lexical scope
+
+// 1. GLOBAL SCOPE
+let a1 = 10;
+
+function outer() {
+  // 2. OUTER SCOPE (Lexical Parent of inner())
+  let b1 = 20;
+
+  function inner() {
+    // 3. INNER SCOPE
+    let c1 = 30;
+
+    // A. Accesses its own scope (c)
+    console.log(`C: ${c1}`);
+
+    // B. Accesses its immediate lexical parent's scope (b)
+    console.log(`B: ${b1}`);
+
+    // C. Accesses the global scope (a)
+    console.log(`A: ${a1}`);
+  }
+
+  inner();
+
+  // D. Cannot access 'c', because 'c' is in the inner() scope
+  // console.log(c); // This would throw a ReferenceError
+}
+
+outer();
+
+
+
+// The leak of var
+var actions = [];
+
+for (var i = 0; i < 3; i++) {
+  // 'i' is declared with 'var', so it belongs to the function/global scope.
+  actions.push(function () {
+    console.log(i); // This function 'closes over' the variable 'i'
+  });
+}
+
+console.log("--- Executing VAR actions ---");
+
+actions[0](); // Output: 3
+actions[1](); // Output: 3
+actions[2](); // Output: 3
+
+/*
+Analysis of the var Bug:
+
+    The var i variable is function-scoped, not block-scoped to the for loop.
+
+    The loop finishes, and the single variable i has been incremented until it fails the condition (i is now 3).
+
+    Each function in the actions array is a closure that points back to the same single i variable.
+
+    When you execute the functions later, they look up the current, final value of i, which is 3.
+
+*/
+
+console.log("--- Reassignment ---")
 
 // reassignment
 
@@ -151,4 +216,5 @@ isTruthy(null)
 isTruthy(undefined)
 isTruthy(Infinity)
 isTruthy(Infinity / -Infinity)
+
 
