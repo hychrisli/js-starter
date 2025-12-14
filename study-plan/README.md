@@ -15,13 +15,13 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [X] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
       * [x] What is Lexical Scope v.s. Dynamic scope (Bash)
       * [x] Understand the difference in how the **`this`** keyword behaves in arrow functions vs. regular functions. Regular function creates its own `this`, determined by the call side. Arrow function does not have its own `this`, its `this` is from the lexical scope.
-
       * [x] Define and demonstrate **closures** (a function retaining access to its parent's scope). A closure is a function bundled together with references to its surrounding state (lexical environment). A closure allows an **inner function** to retain access to the scope of its **parent function**, even after the parent function has finished executing and its execution context has been popped off the stack.
   * **Data Structures & Manipulation:**
       * [x] Create objects using **Object Literals** (`{}`).
       * [x] OOP in JavaScript (Abstraction, Encapsulation, Inheritance and Polymorphism)
-      * [ ] Arrays, Maps, and Sets
-      * [ ] For loop, while loop, Foreach
+      * [ ] Arrays, Maps, and Sets (accessors, mutators)
+      * [ ] For loop, while loop
+      * [ ] Higher-Order functions (forEach, map, filter, reduce, find, some, every)
       * [ ] Use **Array Destructuring** and **Object Destructuring**.
       * [ ] Master the **Spread Operator** (`...`) for cloning arrays/objects and merging.
       * [ ] Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
