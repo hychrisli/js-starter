@@ -18,7 +18,8 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
 
       * [x] Define and demonstrate **closures** (a function retaining access to its parent's scope). A closure is a function bundled together with references to its surrounding state (lexical environment). A closure allows an **inner function** to retain access to the scope of its **parent function**, even after the parent function has finished executing and its execution context has been popped off the stack.
   * **Data Structures & Manipulation:**
-      * [ ] Create objects using **Object Literals** (`{}`).
+      * [x] Create objects using **Object Literals** (`{}`).
+      * [x] OOP in JavaScript (Abstraction, Encapsulation, Inheritance and Polymorphism)
       * [ ] Arrays, Maps, and Sets
       * [ ] For loop, while loop, Foreach
       * [ ] Use **Array Destructuring** and **Object Destructuring**.
