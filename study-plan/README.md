@@ -20,7 +20,7 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [x] Create objects using **Object Literals** (`{}`).
       * [x] OOP in JavaScript (Abstraction, Encapsulation, Inheritance and Polymorphism)
       * [ ] Arrays, Maps, and Sets (accessors, mutators)
-      * [ ] For loop, while loop
+      * [x] For loop (index, for in, for of), while loop, do while loop
       * [ ] Higher-Order functions (forEach, map, filter, reduce, find, some, every)
       * [ ] Use **Array Destructuring** and **Object Destructuring**.
       * [ ] Master the **Spread Operator** (`...`) for cloning arrays/objects and merging.

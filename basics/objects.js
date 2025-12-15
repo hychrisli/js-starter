@@ -20,6 +20,14 @@ console.log(cat.doing)
 console.log(cat.getIntro())
 
 
+// for in
+console.log("=== for in ===")
+// only the public attributes are iterable
+for (const key in cat) {
+  console.log(cat[key])
+}
+
+
 // create class
 
 class Pet {
@@ -95,3 +103,11 @@ let myPet = billyDog
 console.log(`pet name: ${myPet.getName()}`)
 myPet = sammyCat
 console.log(`new pet name: ${myPet.getName()}`)
+
+
+// for in
+console.log("=== for in ===")
+// only the public attributes are iterable
+for (const key in myPet) {
+  console.log(myPet[key])
+}
