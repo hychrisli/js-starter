@@ -92,3 +92,10 @@ do {
   console.log("Here's " + nums[i2]);
   i2++;
 } while (i2 < nums.length)
+
+// spread operator
+console.log("==== spread operator ===")
+const arr1 = [1, 2, 3, 4, 5]
+const arr2 = [4, 5, 6, 7, 8]
+const arr3 = [...arr1, ...arr2]
+console.log(arr3)

@@ -11,6 +11,7 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [x] Define and understand primitive types (`number`, `string`, `boolean`, `null`, `undefined`).
       * [x] `==` v.s. `===`. Avoid `==`, mostly for checking null. The loose equality operator performs type coercion before making the comparison
       * [x] conditions `if`, `else`, `switch`
+      * [x] question mark operators: Ternary operator `? with :`, Optional Chaining `?.`, Nullish Coalescing `??`
   * **Functions & Scope:**
       * [X] Write functions using both **Function Declarations** and **Arrow Functions** (`=>`).
       * [x] What is Lexical Scope v.s. Dynamic scope (Bash)
@@ -19,13 +20,11 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
   * **Data Structures & Manipulation:**
       * [x] Create objects using **Object Literals** (`{}`).
       * [x] OOP in JavaScript (Abstraction, Encapsulation, Inheritance and Polymorphism)
-      * [ ] Arrays, Maps, and Sets (accessors, mutators)
+      * [x] Arrays, Maps, and Sets (accessors, mutators)
       * [x] For loop (index, for in, for of), while loop, do while loop
-      * [ ] Higher-Order functions (forEach, map, filter, reduce, find, some, every)
+      * [ ] Higher-Order functions (forEach, map, filter, reduce, find, some, every). Set and Map only have `forEach`.  Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
       * [ ] Use **Array Destructuring** and **Object Destructuring**.
       * [ ] Master the **Spread Operator** (`...`) for cloning arrays/objects and merging.
-      * [ ] Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
-
 
 -----
 
