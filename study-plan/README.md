@@ -22,7 +22,7 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [x] OOP in JavaScript (Abstraction, Encapsulation, Inheritance and Polymorphism)
       * [x] Arrays, Maps, and Sets (accessors, mutators)
       * [x] For loop (index, for in, for of), while loop, do while loop
-      * [ ] Higher-Order functions (forEach, map, filter, reduce, find, some, every). Set and Map only have `forEach`.  Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
+      * [x] Higher-Order functions (forEach, map, filter, reduce, find, some, every). Set and Map only have `forEach`.  Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
       * [ ] Use **Array Destructuring** and **Object Destructuring**.
       * [ ] Master the **Spread Operator** (`...`) for cloning arrays/objects and merging.
 
@@ -37,13 +37,9 @@ The most crucial section to unlearn Java's threading model and embrace Node.js's
       * [ ] Practice **import/export** (ES Modules) and understand the legacy **`require()`/`module.exports`** (CommonJS).
   * **Asynchronous Concepts (Core):**
       * [ ] Define the **Event Loop** (The single-threaded nature of JS that handles concurrent operations).
-
-[Image of Node.js event loop diagram]
-
-```
-* [ ] Write a function that returns a **`Promise`** (using `resolve` and `reject`).
-* [ ] Consume a promise using the **`.then()`** and **`.catch()`** chain.
-```
+      * [ ] Node.js event loop
+      * [ ] Write a function that returns a **`Promise`** (using `resolve` and `reject`).
+      * [ ] Consume a promise using the **`.then()`** and **`.catch()`** chain.
 
   * **Modern Async:**
       * [ ] Use the **`async`** keyword to define a function that implicitly returns a Promise.

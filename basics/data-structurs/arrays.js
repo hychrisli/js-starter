@@ -99,3 +99,70 @@ const arr1 = [1, 2, 3, 4, 5]
 const arr2 = [4, 5, 6, 7, 8]
 const arr3 = [...arr1, ...arr2]
 console.log(arr3)
+
+
+// higher order functions
+console.log("==== forEach ====")
+nums.forEach(x => console.log(x))
+nums.forEach(x => {
+  console.log("Well this is " + x)
+})
+
+console.log("==== map ====")
+const numsPlus = nums.map(x => x+1)
+numsPlus.forEach(x => console.log(x))
+
+console.log("==== filter ===")
+console.log(nums.filter(x => x > 2))
+
+console.log("=== reduce ===")
+console.log(nums.reduce((accu, curVal) => accu + curVal)) // taking the first value of the array as initial
+console.log(nums.reduce((accu, curVal) => accu + curVal, 0)) // initial 0 value
+console.log(nums.reduce((accu, curVal) => accu + curVal, 1)) // initial 1 value
+
+
+console.log("=== reduce full signiture without init === ")
+console.log(nums.reduce((accu, curVal, curIdx, arr) => {
+  console.log(accu, curVal, curIdx, arr)
+  return accu + curVal
+})) // no init
+
+console.log("=== reduce full signiture with init 0 === ")
+console.log(nums.reduce((accu, curVal, curIdx, arr) => {
+  console.log(accu, curVal, curIdx, arr)
+  return accu + curVal
+}, 0)) // initial 0 value
+
+const emptyArr = []
+// console.log(emptyArr.reduce((accu, curVal) => accu + curVal)) // TypeError: Reduce of empty array with no initial value
+console.log(emptyArr.reduce((accu, curVal) => accu + curVal, 0))
+
+console.log("=== find ===")
+console.log(nums.find(x => x < 2))
+
+console.log("=== find with thisArg ===")
+const finder = {
+  threashold: 2,
+  check(x) {
+    return x < this.threashold
+  }
+}
+console.log(nums.find(finder.check)) // undefined
+console.log(nums.find(finder.check, finder)) // correct result
+
+
+const finder2 = {
+  threashold: 2,
+  check: x => x < this.threashold
+}
+console.log(finder2.check(1)) // false because this.threashold is undefined
+console.log(1 < undefined)
+
+
+console.log("=== some() ===")
+console.log(nums.some(x => x > 2)) // true
+console.log(nums.some(x => x > 10)) // false
+
+console.log("=== every() ===")
+console.log(nums.every(x => x > 0)) // true
+console.log(nums.every(x => x > 2)) // false

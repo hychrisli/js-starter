@@ -75,3 +75,8 @@ console.log("=== symmetric difference ===")
 console.log(set1.symmetricDifference(set2))
 console.log(set1)
 console.log(set2)
+
+
+
+console.log("=== foreach ===")
+mySet.forEach(x => console.log(x))

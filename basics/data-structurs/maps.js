@@ -49,3 +49,6 @@ for (const entry of plans.entries()) {
   console.log(`${entry[0]} ===> ${entry[1]}`)
 }
 
+console.log("=== foreach ===")
+plans.forEach(value => console.log(value)) // only values
+plans.forEach((value, key) => console.log(key, value)) // both keys and values
