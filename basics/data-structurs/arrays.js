@@ -166,3 +166,10 @@ console.log(nums.some(x => x > 10)) // false
 console.log("=== every() ===")
 console.log(nums.every(x => x > 0)) // true
 console.log(nums.every(x => x > 2)) // false
+
+
+console.log("=== array destructuring ====")
+const [num1, num2, ...restNums] = nums
+console.log(num1)
+console.log(num2)
+console.log(restNums)

@@ -31,9 +31,10 @@ for (const key in cat) {
 // create class
 
 class Pet {
-  #name
-  #age
-  #doing
+  #name;
+  #age;
+  #doing;
+  location = "home"
 
   constructor(name, age) {
     this.#name = name
@@ -111,3 +112,55 @@ console.log("=== for in ===")
 for (const key in myPet) {
   console.log(myPet[key])
 }
+
+
+console.log("==== convert object to arrays to use HOF ===")
+console.log(Object.keys(cat))
+console.log(Object.values(cat))
+
+// no private fields converted
+const otherPet = new Pet("wobbles", 4)
+console.log(Object.entries(myPet)) 
+console.log(Object.entries(otherPet)) 
+
+Object.entries(cat).forEach((entry) => {
+  const [key, value] = entry
+  console.log(key, value)
+})
+
+
+console.log ("==== object deconstructure ===")
+const {name : catName, age} = cat // rename after destructuring helps
+console.log(catName, age)
+
+console.log("==== extract field from a list of objects ===")
+const pets = [
+  {name: "alab", age: 3},
+  {name: "pensa", age: 2},
+  {age: 5}
+]
+
+console.log(pets.map(pet => pet.age)) // access field
+console.log(pets.map(({age}) => age)) // desctructuring
+
+
+console.log(pets.map(pet => pet.name ?? "kitty")) // access field with default
+console.log(pets.map(({name: petName = "kitty"}) => petName)) // desctructuring, rename and default
+
+
+console.log("==== extract nested field from a list of objects ===")
+const profiles = [
+  {status: "active", personal: {name: "John", address: {city: "New York", state: "NY"}}},
+  {status: "active", personal: {name: "Adrian", address: {state: "NY"}}},
+  {status: "active", personal: {name: "Michael"}},
+  {status: "inactive"}
+]
+
+console.log(profiles.map(profile => profile?.personal?.address?.city ?? "Anywhere"))
+console.log(profiles.map(({
+  personal: {
+    address: {
+      city = "Anywhere"
+    } = {} // set it to empty object, so it can continue to look inside
+  } = {}
+}) => city))
