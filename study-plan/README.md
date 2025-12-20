@@ -25,7 +25,7 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
       * [x] Higher-Order functions (forEach, map, filter, reduce, find, some, every). Set and Map only have `forEach`.  Use the essential array methods: **`.map()`**, **`.filter()`**, and **`.reduce()`**.
       * [x] Use higher-order functions on objects (convert to arrays)
       * [x] Use **Array Destructuring** and **Object Destructuring**.
-      * [ ] Master the **Spread Operator** (`...`) for cloning arrays/objects and merging.
+      * [x] Master the **Spread Operator** (`...`) for cloning arrays/objects/sets/maps and merging.
 
 -----
 

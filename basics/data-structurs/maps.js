@@ -51,4 +51,5 @@ for (const entry of plans.entries()) {
 
 console.log("=== foreach ===")
 plans.forEach(value => console.log(value)) // only values
+// notice the reverse order value first and key second
 plans.forEach((value, key) => console.log(key, value)) // both keys and values
