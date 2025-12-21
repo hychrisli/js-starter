@@ -164,3 +164,21 @@ console.log(profiles.map(({
     } = {} // set it to empty object, so it can continue to look inside
   } = {}
 }) => city))
+
+
+console.log("=== prototypal inheritance ===")
+// prototypal inheritance
+function MyObject(name){
+  this.myName = name
+  this.value = 0
+} 
+
+MyObject.prototype.addOne = function() {
+  this.value += 1
+  console.log(`${this.myName} has value: ${this.value}`);
+}
+
+const obj = new MyObject("Chirpy")
+obj.addOne();
+obj.addOne();
+obj.addOne();

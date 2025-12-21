@@ -34,8 +34,8 @@ The goal is to master modern JS syntax (ES6+) and the key differences from Java'
 The most crucial section to unlearn Java's threading model and embrace Node.js's non-blocking I/O.
 
   * **OOP & Modules:**
-      * [ ] Understand **Prototypal Inheritance** (the real mechanism) vs. **ES6 Classes** (the syntactic sugar).
-      * [ ] Practice **import/export** (ES Modules) and understand the legacy **`require()`/`module.exports`** (CommonJS).
+      * [x] Understand **Prototypal Inheritance** (the real mechanism) vs. **ES6 Classes** (the syntactic sugar).
+      * [x] Practice **import/export** (ES Modules) and understand the legacy **`require()`/`module.exports`** (CommonJS).
   * **Asynchronous Concepts (Core):**
       * [ ] Define the **Event Loop** (The single-threaded nature of JS that handles concurrent operations).
       * [ ] Node.js event loop
