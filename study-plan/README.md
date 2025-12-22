@@ -37,10 +37,9 @@ The most crucial section to unlearn Java's threading model and embrace Node.js's
       * [x] Understand **Prototypal Inheritance** (the real mechanism) vs. **ES6 Classes** (the syntactic sugar).
       * [x] Practice **import/export** (ES Modules) and understand the legacy **`require()`/`module.exports`** (CommonJS).
   * **Asynchronous Concepts (Core):**
-      * [ ] Define the **Event Loop** (The single-threaded nature of JS that handles concurrent operations).
-      * [ ] Node.js event loop
-      * [ ] Write a function that returns a **`Promise`** (using `resolve` and `reject`).
-      * [ ] Consume a promise using the **`.then()`** and **`.catch()`** chain.
+      * [x] Define the **Event Loop** (The single-threaded nature of JS that handles concurrent operations). https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick 
+      * [x] Write a function that returns a **`Promise`** (using `resolve` and `reject`).
+      * [x] Consume a promise using the **`.then()`** and **`.catch()`** chain.
 
   * **Modern Async:**
       * [ ] Use the **`async`** keyword to define a function that implicitly returns a Promise.
