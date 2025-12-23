@@ -42,9 +42,9 @@ The most crucial section to unlearn Java's threading model and embrace Node.js's
       * [x] Consume a promise using the **`.then()`** and **`.catch()`** chain.
 
   * **Modern Async:**
-      * [ ] Use the **`async`** keyword to define a function that implicitly returns a Promise.
-      * [ ] Use the **`await`** keyword inside an `async` function to pause execution until a Promise resolves.
-      * [ ] Implement **`try...catch`** blocks within `async` functions for robust error handling.
+      * [x] Use the **`async`** keyword to define a function that implicitly returns a Promise.
+      * [x] Use the **`await`** keyword inside an `async` function to pause execution until a Promise resolves.
+      * [x] Implement **`try...catch`** blocks within `async` functions for robust error handling.
 
 -----
 
