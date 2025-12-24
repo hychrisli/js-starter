@@ -53,13 +53,13 @@ The most crucial section to unlearn Java's threading model and embrace Node.js's
 This phase is about setting up the environment and the core web server structure.
 
   * **Node.js & Environment:**
-      * [ ] Initialize a new project with **`npm init`** and understand the contents of `package.json`.
-      * [ ] Install and configure the **Express** framework.
-      * [ ] Use the **`dotenv`** package to load environment variables (`.env`).
+      * [x] Initialize a new project with **`npm init`** and understand the contents of `package.json`.
+      * [x] Install and configure the **Express** framework.
+      * [x] Use the **`dotenv`** package to load environment variables (`.env`).
   * **Express Fundamentals:**
-      * [ ] Define the basic server setup (`const app = express()`, `app.listen()`).
+      * [x] Define the basic server setup (`const app = express()`, `app.listen()`).
       * [ ] Configure the server to use **Body Parsers** (`express.json()`, `express.urlencoded()`).
-      * [ ] Define a basic **GET** route for the root endpoint (`/`).
+      * [x] Define a basic **GET** route for the root endpoint (`/`).
   * **Architecture & Middleware:**
       * [ ] Refactor route logic into a separate file using **`express.Router()`** (Controller separation).
       * [ ] Write and apply a **global middleware function** (e.g., a logger).
