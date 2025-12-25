@@ -1,0 +1,18 @@
+GET http://localhost:3000/
+
+###
+
+POST http://localhost:3000/users/submit
+content-type: application/json
+
+{
+  "name": "silver",
+  "age": 50
+}
+
+###
+POST http://localhost:3000/users/submit
+Content-Type: application/x-www-form-urlencoded
+
+name=gold
+&age=49

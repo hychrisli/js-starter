@@ -58,12 +58,12 @@ This phase is about setting up the environment and the core web server structure
       * [x] Use the **`dotenv`** package to load environment variables (`.env`).
   * **Express Fundamentals:**
       * [x] Define the basic server setup (`const app = express()`, `app.listen()`).
-      * [ ] Configure the server to use **Body Parsers** (`express.json()`, `express.urlencoded()`).
+      * [x] Configure the server to use **Body Parsers** (`express.json()`, `express.urlencoded()`).
       * [x] Define a basic **GET** route for the root endpoint (`/`).
   * **Architecture & Middleware:**
-      * [ ] Refactor route logic into a separate file using **`express.Router()`** (Controller separation).
-      * [ ] Write and apply a **global middleware function** (e.g., a logger).
-      * [ ] Understand the `req`, `res`, and `next()` parameters in a middleware function.
+      * [x] Refactor route logic into a separate file using **`express.Router()`** (Controller separation).
+      * [x] Write and apply a **global middleware function** (e.g., a logger).
+      * [x] Understand the `req`, `res`, and `next()` parameters in a middleware function.
 
 -----
 
