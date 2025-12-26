@@ -4,9 +4,11 @@ import helloRoutes from './routes/helloRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import requestLogger from './middleware/requestLogger.js';
 import responseLogger from './middleware/responseLogger.js';
-import { initDb } from './data/db.js';
+import { initDb } from './simple-data/db.js';
+import { initPrismaDb } from './repositories/userPost.js';
 
 initDb();
+initPrismaDb();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

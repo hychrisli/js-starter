@@ -72,7 +72,12 @@ This phase is about setting up the environment and the core web server structure
 Integrate your first database and solidify the concept of separation of concerns (similar to Spring's MVC/Service/Repo layers).
 
   * **Data Access Layer (Repository):**
-      * [ ] Install a minimal SQLite driver (`sqlite3`) or an ORM like **Sequelize/Prisma**.
+      * [x] Install a minimal SQLite driver (`sqlite3`). Create a table, insert data and select data.
+      * [x] Install **Prisma** and required dependencies. Configure ESM Support
+      * [x] Initialize Prisma ORM and create a Prisma sqlite database
+      * [x] Define your data model `User` and `Post`. Create and apply the Prisma migration
+      * [x] Instantiate prisma client
+      * [x] write the a query to create a new user and their posts. Then Fetch all users with their posts
       * [ ] Create a dedicated **repository file** (`UserRepository.js`) for all database operations.
       * [ ] Write an `async` function to initialize/connect to the **SQLite file**.
   * **CRUD Implementation:**
