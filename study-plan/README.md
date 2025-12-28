@@ -76,12 +76,12 @@ Integrate your first database and solidify the concept of separation of concerns
       * [x] Install **Prisma** and required dependencies. Configure ESM Support
       * [x] Initialize Prisma ORM and create a Prisma sqlite database
       * [x] Define your data model `User` and `Post`. Create and apply the Prisma migration
-      * [x] Instantiate prisma client
+      * [x] Instantiate prisma client. Install npm install @prisma/adapter-libsql @libsql/client when using ESM module format, to connect to sqlite, because by default an adaptor is not provided. Then `import { PrismaLibSql } from '@prisma/adapter-libsql'`
       * [x] write the a query to create a new user and their posts. Then Fetch all users with their posts
-      * [ ] Create a dedicated **repository file** (`UserRepository.js`) for all database operations.
-      * [ ] Write an `async` function to initialize/connect to the **SQLite file**.
+      * [x] Create a dedicated **repository file** (`UserRepository.js`) for database operations.
+      * [x] Write an `async` function to initialize/connect to the **SQLite file**.
   * **CRUD Implementation:**
-      * [ ] Implement a **`CREATE`** function (e.g., `saveUser(data)`) in the repository.
+      * [x] Implement a **`CREATE`** function (e.g., `saveUser(data)`) in the repository.
       * [ ] Implement a **`READ`** function (e.g., `findAllUsers()` and `findUserById(id)`).
       * [ ] Create corresponding **POST** and **GET** routes in Express to call these functions.
       * [ ] Ensure all repository methods handle and propagate **database errors** using `try...catch`.

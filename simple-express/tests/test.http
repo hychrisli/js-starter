@@ -6,8 +6,9 @@ POST http://localhost:3000/users/submit
 content-type: application/json
 
 {
-  "name": "silver",
-  "age": 50
+  "name": "silverdark",
+  "age": 50,
+  "email": "hellosilver3@world.com"
 }
 
 ###
