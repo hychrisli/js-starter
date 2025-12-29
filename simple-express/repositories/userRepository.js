@@ -23,3 +23,20 @@ export async function asyncFindUserById(id) {
     }
   });
 }
+
+export async function asyncDeleteUserById(id) {
+  return await prisma.user.delete({
+    where: {
+      id: id
+    }
+  });
+}
+
+export async function asyncUpdateUserById(id, data) {
+  return await prisma.user.update({
+    where: {
+      id: id
+    },
+    data: data
+  });
+}

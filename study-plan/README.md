@@ -86,7 +86,7 @@ Integrate your first database and solidify the concept of separation of concerns
       * [x] Create corresponding **POST** and **GET** routes in Express to call these functions.
       * [x] Ensure all repository methods handle and propagate **database errors** using `try...catch`.
   * **RESTful Practice:**
-    * [ ] Implement a **PUT/PATCH** route for updates and a **DELETE** route.
+    * [x] Implement a **PUT/PATCH** route for updates and a **DELETE** route.
 
 -----
 ## ✅ Week 5: Productionize the API

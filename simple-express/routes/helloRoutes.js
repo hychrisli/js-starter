@@ -1,8 +1,8 @@
-import express from 'express'
+import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send("Welcome to simple express!")
-})
+  res.send('Welcome to simple express!');
+});
 
 export default router;

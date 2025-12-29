@@ -1,4 +1,7 @@
-import { asyncSaveUser, asyncFindUsers, asyncFindUserById } from '../repositories/userRepository.js';
+import {
+  asyncSaveUser, asyncFindUsers, asyncFindUserById,
+  asyncDeleteUserById, asyncUpdateUserById
+} from '../repositories/userRepository.js';
 
 export function createUser(userReq, res) {
   asyncSaveUser(userReq).then(msg => {
@@ -30,5 +33,27 @@ export function findUserById(id, res) {
   }).catch(err => {
     console.error("Failed to find users", err);
     res.status(500).send(`Failed to find users due to ${err.message}`);
+  });
+}
+
+export function deleteUserById(id, res) {
+  asyncDeleteUserById(id).then(msg => {
+    res.status(200).send("user deleted");
+  }).catch(err => {
+    if (err.code === 'P2025') {
+      console.log("Nothing to delete; user was already gone.");
+      res.status(200).send("user deleted");
+    } else {
+      console.error("Failed to delete user", err);
+      res.status(500).send(`Failed to delete user due to ${err.message}`);
+    }
+  });
+}
+
+export function updateUserById(id, data, res) {
+  asyncUpdateUserById(id, data).then(user => {
+    res.status(200).json(user);
+  }).catch(err => {
+    res.status(500).send(`Failed to update user due to ${err.message}`);
   });
 }

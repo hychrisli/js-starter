@@ -6,9 +6,9 @@ POST http://localhost:3000/users/submit
 content-type: application/json
 
 {
-  "name": "silverdark",
+  "name": "silverdark5",
   "age": 50,
-  "email": "hellosilver3@world.com"
+  "email": "hellosilver5@world.com"
 }
 
 ###
@@ -25,3 +25,16 @@ GET http://localhost:3000/users
 
 ###
 GET http://localhost:3000/users/19
+
+###
+DELETE http://localhost:3000/users/22
+
+
+###
+PUT http://localhost:3000/users/5
+content-type: application/json
+
+{
+  "name": "silverdark6",
+  "email": "hellosilver6@world.com"
+}
