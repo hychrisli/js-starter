@@ -82,15 +82,44 @@ Integrate your first database and solidify the concept of separation of concerns
       * [x] Write an `async` function to initialize/connect to the **SQLite file**.
   * **CRUD Implementation:**
       * [x] Implement a **`CREATE`** function (e.g., `saveUser(data)`) in the repository.
-      * [ ] Implement a **`READ`** function (e.g., `findAllUsers()` and `findUserById(id)`).
-      * [ ] Create corresponding **POST** and **GET** routes in Express to call these functions.
-      * [ ] Ensure all repository methods handle and propagate **database errors** using `try...catch`.
+      * [x] Implement a **`READ`** function (e.g., `findAllUsers()` and `findUserById(id)`).
+      * [x] Create corresponding **POST** and **GET** routes in Express to call these functions.
+      * [x] Ensure all repository methods handle and propagate **database errors** using `try...catch`.
   * **RESTful Practice:**
-      * [ ] Implement a **PUT/PATCH** route for updates and a **DELETE** route.
+    * [ ] Implement a **PUT/PATCH** route for updates and a **DELETE** route.
 
 -----
+## ✅ Week 5: Productionize the API
+  * **Request Validation**
+    * [ ] Schema Definition: Learn to define data shapes using a library like Zod (recommended for TypeScript/Modern JS) or Joi.
+    * [ ] Middleware Integration: Create a reusable function that takes a schema and validates req.body, req.params, or req.query.
+    * [ ] Error Mapping: Learn how to format validation errors so they return a clean, readable JSON object to the frontend (e.g., { "field": "email", "error": "Invalid format" }).
+    * [ ] Sanitization: Practice stripping out unknown fields that aren't in your schema to prevent "over-posting" attacks.
+  * **Pagination**
+    * [ ] Query Parameters: Learn how to extract page and limit (or size) from req.query (e.g., /products?page=2&limit=10).
+    * [ ] Offset vs. Keyset (Cursor) Pagination: Offset: Understand LIMIT and OFFSET in SQL (easy to implement, slower on large datasets). Keyset/Cursor: Learn how to fetch "the next 10 items after ID X" (better for infinite scrolls).
+    * [ ] Mathematical Logic: Master the formula for calculating the offset: offset=(page−1)×limit
+    * [ ] Response Metadata: Practice returning a structured object that includes totalItems, totalPages, currentPage, and the data array.
+    * [ ] Validation: Ensure your validation middleware (Zod/Joi) forces page and limit to be positive integers.
+  * **Global Exception Handling**
+    * [ ] Custom Error Classes: Learn to extend the built-in Error class to create AppError or HttpError classes that include a statusCode.
+    * [ ] Async Wrapper/Handler: Understand why try/catch is needed in async Express routes and how to write a catchAsync utility to eliminate boilerplate.
+    * [ ] Error Middleware: Master the (err, req, res, next) signature and ensure it is the last piece of middleware in your app.js.
+    * [ ] Environment Logic: Implement logic to show "Stack Traces" in development but hide them in production.
+  * **Logging & Request Correlation**
+    * [ ] Winston/Pino Setup: Configure a logger that outputs JSON (for machines) in production and pretty-text (for humans) in development.
+    * [ ] The Correlation ID: Use the uuid package to generate a requestId for every incoming request.
+    * [ ] Async Context (Advanced): Research AsyncLocalStorage in Node.js to see how to access the requestId in your Service layer without passing it through every function argument.
+    * [ ] Log Levels: Learn when to use .info(), .warn(), .error(), and .debug() correctly. 
+  * **OAuth2**
+    * [ ] Grant Types: Understand the difference between the Authorization Code Flow (for web apps) and Client Credentials Flow (for machine-to-machine).
+    * [ ] The Handshake: Learn the "Redirect to Provider" vs. "Callback" flow.
+    * [ ] Passport.js Strategies: Practice setting up passport-google-oauth20 or passport-github2.
+    * [ ] JWT Integration: Learn how to issue a JWT after the OAuth handshake is successful so the user stays logged in.
+    * [ ] Security Best Practices: Research state parameters (to prevent CSRF) and PKCE (Proof Key for Code Exchange).
+-----
 
-## ✅ Week 5: Testing (Unit & Integration)
+## ✅ Week 6: Testing (Unit & Integration)
 
 Focus on making your code testable and establishing a testing workflow using **Jest** and **Supertest**.
 
@@ -109,7 +138,7 @@ Focus on making your code testable and establishing a testing workflow using **J
 
 -----
 
-## 🛡️ Week 6: TypeScript Transition
+## 🛡️ Week 7: TypeScript Transition
 
 Bringing type safety back into your backend projects, similar to your Java experience.
 

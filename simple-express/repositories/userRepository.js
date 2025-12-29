@@ -9,3 +9,17 @@ export async function asyncSaveUser(userReq) {
   });
   console.log(`created user`, user);
 };
+
+export async function asyncFindUsers() {
+  const users = await prisma.user.findMany();
+  // console.log(`found users`, users);
+  return users;
+}
+
+export async function asyncFindUserById(id) {
+  return await prisma.user.findUnique({
+    where: {
+      id: id
+    }
+  });
+}
