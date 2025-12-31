@@ -20,8 +20,19 @@ name=gold
 
 
 ###
-GET http://localhost:3000/users
+GET http://localhost:3000/users?page=4&limit=3
 
+###
+GET http://localhost:3000/users?page=1&limit=1000
+
+###
+GET http://localhost:3000/users?page=1
+
+###
+GET http://localhost:3000/users?limit=5
+
+###
+GET http://localhost:3000/users
 
 ###
 GET http://localhost:3000/users/19

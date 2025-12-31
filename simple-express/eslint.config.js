@@ -3,6 +3,7 @@ import globals from 'globals';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
+  js.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs}'], plugins: { js },
     extends: ['js/recommended'], languageOptions: { globals: globals.browser },
@@ -16,6 +17,8 @@ export default defineConfig([
       'prefer-const': 'error',               // Use const when possible
       'curly': ['error', 'all'],          // Braces for all control statements
       'comma-dangle': ['error', 'always-multiline'],
+      'no-unused-vars': 'error', // Change to "warn" if you prefer yellow lines
+      'no-undef': 'error',
     },
   },
 ]);

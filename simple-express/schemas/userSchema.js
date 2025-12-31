@@ -6,3 +6,10 @@ export const createUserSchema = z.object({
     email: z.email('Invalid email format'),
   }),
 });
+
+export const createUserQuerySchema = z.object({
+  query: z.object({
+    page: z.coerce.number().int().positive().default(1),
+    limit: z.coerce.number().int().min(1).max(100).default(10),
+  }),
+});

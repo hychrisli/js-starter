@@ -1,9 +1,12 @@
 import express from 'express';
 import {
-  createUser, findUsers, findUserById, deleteUserById, updateUserById,
+  createUser, findUserById, deleteUserById, updateUserById,
+  asyncFindUsersWithPagination,
 } from '../services/userService.js';
 import { validate } from '../middleware/validate.js';
-import { createUserSchema } from '../schemas/userSchema.js';
+import {
+  createUserSchema, createUserQuerySchema,
+} from '../schemas/userSchema.js';
 
 const router = express.Router();
 
@@ -12,8 +15,9 @@ router.post('/submit', validate(createUserSchema), (req, res) => {
   createUser(req.validatedData.body, res);
 });
 
-router.get('/', (req, res) => {
-  findUsers(res);
+router.get('/', validate(createUserQuerySchema), async (req, res) => {
+  console.log(req.validatedData.query);
+  await asyncFindUsersWithPagination(req.validatedData.query, res);
 });
 
 router.get('/:id', (req, res) => {

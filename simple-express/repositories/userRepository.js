@@ -10,8 +10,18 @@ export async function asyncSaveUser(userReq) {
   console.log('created user', user);
 };
 
-export async function asyncFindUsers() {
-  const users = await prisma.user.findMany();
+export async function asyncUserCount() {
+  return await prisma.user.count();
+}
+
+export async function asyncFindUsers(page, limit) {
+  const users = await prisma.user.findMany({
+    skip: (page - 1) * limit,
+    take: limit,
+    orderBy: {
+      id: 'asc',
+    },
+  });
   // console.log(`found users`, users);
   return users;
 }

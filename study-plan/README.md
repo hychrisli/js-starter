@@ -96,11 +96,9 @@ Integrate your first database and solidify the concept of separation of concerns
     * [x] Error Mapping: Learn how to format validation errors so they return a clean, readable JSON object to the frontend (e.g., { "field": "email", "error": "Invalid format" }).
     * [x] Sanitization: Practice stripping out unknown fields that aren't in your schema to prevent "over-posting" attacks.
   * **Pagination**
-    * [ ] Query Parameters: Learn how to extract page and limit (or size) from req.query (e.g., /products?page=2&limit=10).
-    * [ ] Offset vs. Keyset (Cursor) Pagination: Offset: Understand LIMIT and OFFSET in SQL (easy to implement, slower on large datasets). Keyset/Cursor: Learn how to fetch "the next 10 items after ID X" (better for infinite scrolls).
-    * [ ] Mathematical Logic: Master the formula for calculating the offset: offset=(page−1)×limit
-    * [ ] Response Metadata: Practice returning a structured object that includes totalItems, totalPages, currentPage, and the data array.
-    * [ ] Validation: Ensure your validation middleware (Zod/Joi) forces page and limit to be positive integers.
+    * [x] Query Parameters: Learn how to extract page and limit (or size) from req.query (e.g., /products?page=2&limit=10).
+    * [x] Response Metadata: Practice returning a structured object that includes totalItems, totalPages, currentPage, and the data array.
+    * [x] Validation: Ensure your validation middleware (Zod/Joi) forces page and limit to be positive integers.
   * **Global Exception Handling**
     * [ ] Custom Error Classes: Learn to extend the built-in Error class to create AppError or HttpError classes that include a statusCode.
     * [ ] Async Wrapper/Handler: Understand why try/catch is needed in async Express routes and how to write a catchAsync utility to eliminate boilerplate.

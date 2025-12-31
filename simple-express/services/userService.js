@@ -1,6 +1,6 @@
 import {
   asyncSaveUser, asyncFindUsers, asyncFindUserById,
-  asyncDeleteUserById, asyncUpdateUserById,
+  asyncDeleteUserById, asyncUpdateUserById, asyncUserCount,
 } from '../repositories/userRepository.js';
 
 export function createUser(userReq, res) {
@@ -13,13 +13,20 @@ export function createUser(userReq, res) {
   );
 }
 
-export function findUsers(res) {
-  asyncFindUsers().then(users => {
-    res.status(200).json(users);
-  }).catch(err => {
+export async function asyncFindUsersWithPagination(query, res) {
+  try {
+    const total = await asyncUserCount();
+    const users = await asyncFindUsers(query.page, query.limit);
+    res.status(200).json({
+      totalUsers: total,
+      totalPages: Math.trunc(total / query.limit) + 1,
+      currentPage: query.page,
+      users: users,
+    });
+  } catch (err) {
     console.error('Failed to find users', err);
     res.status(500).send(`Failed to find users due to ${err.message}`);
-  });
+  }
 }
 
 export function findUserById(id, res) {
