@@ -2,11 +2,14 @@ import express from 'express';
 import {
   createUser, findUsers, findUserById, deleteUserById, updateUserById,
 } from '../services/userService.js';
+import { validate } from '../middleware/validate.js';
+import { createUserSchema } from '../schemas/userSchema.js';
+
 const router = express.Router();
 
-router.post('/submit', (req, res) => {
-  console.log(req.body);
-  createUser(req.body, res);
+router.post('/submit', validate(createUserSchema), (req, res) => {
+  console.log(req.validatedData.body);
+  createUser(req.validatedData.body, res);
 });
 
 router.get('/', (req, res) => {

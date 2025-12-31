@@ -9,33 +9,34 @@ async function generateRandomData() {
       posts: {
         create: {
           title: faker.word.noun(),
-          content: `${faker.person.firstName()} really likes ${faker.word.noun()}`,
-          published: true
-        }
-      }
+          content: `${faker.person.firstName()} 
+          really likes ${faker.word.noun()}`,
+          published: true,
+        },
+      },
     },
     include: {
-      posts: true
-    }
+      posts: true,
+    },
   });
 
-  console.log(`created user`, user);
+  console.log('created user', user);
 
   const latestUsers = await prisma.user.findMany({
     take: 2,
     orderBy: {
-      id: 'desc'
+      id: 'desc',
     },
     include: {
-      posts: true
-    }
+      posts: true,
+    },
   });
 
-  console.log("Latests users:", JSON.stringify(latestUsers, null, 2));
+  console.log('Latests users:', JSON.stringify(latestUsers, null, 2));
 };
 
 export function initPrismaDb() {
   generateRandomData().then(
-    result => console.log("Finished initializing Prisma DB")
-  ).catch(error => console.error("Failed to init prisma DB", error));
+    () => console.log('Finished initializing Prisma DB'),
+  ).catch(error => console.error('Failed to init prisma DB', error));
 }

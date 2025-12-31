@@ -91,10 +91,10 @@ Integrate your first database and solidify the concept of separation of concerns
 -----
 ## ✅ Week 5: Productionize the API
   * **Request Validation**
-    * [ ] Schema Definition: Learn to define data shapes using a library like Zod (recommended for TypeScript/Modern JS) or Joi.
-    * [ ] Middleware Integration: Create a reusable function that takes a schema and validates req.body, req.params, or req.query.
-    * [ ] Error Mapping: Learn how to format validation errors so they return a clean, readable JSON object to the frontend (e.g., { "field": "email", "error": "Invalid format" }).
-    * [ ] Sanitization: Practice stripping out unknown fields that aren't in your schema to prevent "over-posting" attacks.
+    * [x] Schema Definition: Learn to define data shapes using a library like Zod (recommended for TypeScript/Modern JS) or Joi.
+    * [x] Middleware Integration: Create a reusable function that takes a schema and validates req.body, req.params, or req.query.
+    * [x] Error Mapping: Learn how to format validation errors so they return a clean, readable JSON object to the frontend (e.g., { "field": "email", "error": "Invalid format" }).
+    * [x] Sanitization: Practice stripping out unknown fields that aren't in your schema to prevent "over-posting" attacks.
   * **Pagination**
     * [ ] Query Parameters: Learn how to extract page and limit (or size) from req.query (e.g., /products?page=2&limit=10).
     * [ ] Offset vs. Keyset (Cursor) Pagination: Offset: Understand LIMIT and OFFSET in SQL (easy to implement, slower on large datasets). Keyset/Cursor: Learn how to fetch "the next 10 items after ID X" (better for infinite scrolls).

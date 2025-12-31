@@ -1,15 +1,15 @@
 import {
   asyncSaveUser, asyncFindUsers, asyncFindUserById,
-  asyncDeleteUserById, asyncUpdateUserById
+  asyncDeleteUserById, asyncUpdateUserById,
 } from '../repositories/userRepository.js';
 
 export function createUser(userReq, res) {
-  asyncSaveUser(userReq).then(msg => {
-    res.status(201).send(`User has been created successfully`);
+  asyncSaveUser(userReq).then(() => {
+    res.status(201).send('User has been created successfully');
   }).catch(err => {
-    console.error("Failed to create user: ", err);
+    console.error('Failed to create user: ', err);
     res.status(500).send(`Failed to create user due to ${err.message}`);
-  }
+  },
   );
 }
 
@@ -17,7 +17,7 @@ export function findUsers(res) {
   asyncFindUsers().then(users => {
     res.status(200).json(users);
   }).catch(err => {
-    console.error("Failed to find users", err);
+    console.error('Failed to find users', err);
     res.status(500).send(`Failed to find users due to ${err.message}`);
   });
 }
@@ -31,20 +31,20 @@ export function findUserById(id, res) {
       res.status(200).json(user);
     }
   }).catch(err => {
-    console.error("Failed to find users", err);
+    console.error('Failed to find users', err);
     res.status(500).send(`Failed to find users due to ${err.message}`);
   });
 }
 
 export function deleteUserById(id, res) {
-  asyncDeleteUserById(id).then(msg => {
-    res.status(200).send("user deleted");
+  asyncDeleteUserById(id).then(() => {
+    res.status(200).send('user deleted');
   }).catch(err => {
     if (err.code === 'P2025') {
-      console.log("Nothing to delete; user was already gone.");
-      res.status(200).send("user deleted");
+      console.log('Nothing to delete; user was already gone.');
+      res.status(200).send('user deleted');
     } else {
-      console.error("Failed to delete user", err);
+      console.error('Failed to delete user', err);
       res.status(500).send(`Failed to delete user due to ${err.message}`);
     }
   });

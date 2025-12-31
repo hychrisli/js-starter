@@ -5,9 +5,9 @@ export async function asyncSaveUser(userReq) {
     data: {
       name: userReq.name,
       email: userReq.email,
-    }
+    },
   });
-  console.log(`created user`, user);
+  console.log('created user', user);
 };
 
 export async function asyncFindUsers() {
@@ -19,24 +19,24 @@ export async function asyncFindUsers() {
 export async function asyncFindUserById(id) {
   return await prisma.user.findUnique({
     where: {
-      id: id
-    }
+      id: id,
+    },
   });
 }
 
 export async function asyncDeleteUserById(id) {
   return await prisma.user.delete({
     where: {
-      id: id
-    }
+      id: id,
+    },
   });
 }
 
 export async function asyncUpdateUserById(id, data) {
   return await prisma.user.update({
     where: {
-      id: id
+      id: id,
     },
-    data: data
+    data: data,
   });
 }
