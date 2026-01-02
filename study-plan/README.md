@@ -100,10 +100,9 @@ Integrate your first database and solidify the concept of separation of concerns
     * [x] Response Metadata: Practice returning a structured object that includes totalItems, totalPages, currentPage, and the data array.
     * [x] Validation: Ensure your validation middleware (Zod/Joi) forces page and limit to be positive integers.
   * **Global Exception Handling**
-    * [ ] Custom Error Classes: Learn to extend the built-in Error class to create AppError or HttpError classes that include a statusCode.
-    * [ ] Async Wrapper/Handler: Understand why try/catch is needed in async Express routes and how to write a catchAsync utility to eliminate boilerplate.
-    * [ ] Error Middleware: Master the (err, req, res, next) signature and ensure it is the last piece of middleware in your app.js.
-    * [ ] Environment Logic: Implement logic to show "Stack Traces" in development but hide them in production.
+    * [x] Custom Error Classes: Learn to extend the built-in Error class to create AppError or HttpError classes that include a statusCode.
+    * [x] Async Wrapper/Handler: Understand why try/catch is needed in async Express routes and how to write a catchAsync utility to eliminate boilerplate.
+    * [x] Error Middleware: Master the (err, req, res, next) signature and ensure it is the last piece of middleware in your app.js.
   * **Logging & Request Correlation**
     * [ ] Winston/Pino Setup: Configure a logger that outputs JSON (for machines) in production and pretty-text (for humans) in development.
     * [ ] The Correlation ID: Use the uuid package to generate a requestId for every incoming request.

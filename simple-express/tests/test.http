@@ -20,7 +20,7 @@ name=gold
 
 
 ###
-GET http://localhost:3000/users?page=4&limit=3
+GET http://localhost:3000/users?page=-1&limit=3
 
 ###
 GET http://localhost:3000/users?page=1&limit=1000
@@ -35,10 +35,10 @@ GET http://localhost:3000/users?limit=5
 GET http://localhost:3000/users
 
 ###
-GET http://localhost:3000/users/19
+GET http://localhost:3000/users/100
 
 ###
-DELETE http://localhost:3000/users/22
+DELETE http://localhost:3000/users/100
 
 
 ###
@@ -47,5 +47,6 @@ content-type: application/json
 
 {
   "name": "silverdark6",
-  "email": "hellosilver6@world.com"
+  "email": "hellosilver6@world.com",
+  "age": 12
 }

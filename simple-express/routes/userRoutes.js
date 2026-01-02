@@ -1,7 +1,7 @@
 import express from 'express';
 import {
   createUser, findUserById, deleteUserById, updateUserById,
-  asyncFindUsersWithPagination,
+  findUsersWithPagination,
 } from '../services/userService.js';
 import { validate } from '../middleware/validate.js';
 import {
@@ -10,32 +10,33 @@ import {
 
 const router = express.Router();
 
-router.post('/submit', validate(createUserSchema), (req, res) => {
+router.post('/submit', validate(createUserSchema), async (req, res) => {
   console.log(req.validatedData.body);
-  createUser(req.validatedData.body, res);
+  const user = await createUser(req.validatedData.body);
+  res.status(201).send(`user created ${user}`);
 });
 
 router.get('/', validate(createUserQuerySchema), async (req, res) => {
   console.log(req.validatedData.query);
-  await asyncFindUsersWithPagination(req.validatedData.query, res);
+  await findUsersWithPagination(req.validatedData.query, res);
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const userId = Number(id);
-  findUserById(userId, res);
+  await findUserById(userId, res);
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   const userId = Number(id);
-  deleteUserById(userId, res);
+  await deleteUserById(userId, res);
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   const { id } = req.params;
   const userId = Number(id);
-  updateUserById(userId, req.body, res);
+  await updateUserById(userId, req.body, res);
 });
 
 export default router;

@@ -3,64 +3,41 @@ import {
   asyncDeleteUserById, asyncUpdateUserById, asyncUserCount,
 } from '../repositories/userRepository.js';
 
-export function createUser(userReq, res) {
-  asyncSaveUser(userReq).then(() => {
-    res.status(201).send('User has been created successfully');
-  }).catch(err => {
-    console.error('Failed to create user: ', err);
-    res.status(500).send(`Failed to create user due to ${err.message}`);
-  },
-  );
+export async function createUser(userReq) {
+  return asyncSaveUser(userReq);
 }
 
-export async function asyncFindUsersWithPagination(query, res) {
-  try {
-    const total = await asyncUserCount();
-    const users = await asyncFindUsers(query.page, query.limit);
-    res.status(200).json({
-      totalUsers: total,
-      totalPages: Math.trunc(total / query.limit) + 1,
-      currentPage: query.page,
-      users: users,
-    });
-  } catch (err) {
-    console.error('Failed to find users', err);
-    res.status(500).send(`Failed to find users due to ${err.message}`);
-  }
+export async function findUsersWithPagination(query, res) {
+  const total = await asyncUserCount();
+  const users = await asyncFindUsers(query.page, query.limit);
+  res.status(200).json({
+    totalUsers: total,
+    totalPages: Math.trunc(total / query.limit) + 1,
+    currentPage: query.page,
+    users: users,
+  });
 }
 
-export function findUserById(id, res) {
-  asyncFindUserById(id).then(user => {
+// if not await, then Promise shall be returned
+// and waited at the caller level. Otherwise unhandled exception
+// can cause sever shut down
+export async function findUserById(id, res) {
+  return asyncFindUserById(id).then(user => {
     if (!user) {
       // user is null
       res.status(404).send(`Not found user with id ${id}`);
     } else {
       res.status(200).json(user);
     }
-  }).catch(err => {
-    console.error('Failed to find users', err);
-    res.status(500).send(`Failed to find users due to ${err.message}`);
   });
 }
 
-export function deleteUserById(id, res) {
-  asyncDeleteUserById(id).then(() => {
-    res.status(200).send('user deleted');
-  }).catch(err => {
-    if (err.code === 'P2025') {
-      console.log('Nothing to delete; user was already gone.');
-      res.status(200).send('user deleted');
-    } else {
-      console.error('Failed to delete user', err);
-      res.status(500).send(`Failed to delete user due to ${err.message}`);
-    }
-  });
+export async function deleteUserById(id, res) {
+  await asyncDeleteUserById(id);
+  res.status(200).send('user deleted');
 }
 
-export function updateUserById(id, data, res) {
-  asyncUpdateUserById(id, data).then(user => {
-    res.status(200).json(user);
-  }).catch(err => {
-    res.status(500).send(`Failed to update user due to ${err.message}`);
-  });
+export async function updateUserById(id, data, res) {
+  const user = await asyncUpdateUserById(id, data);
+  res.status(200).json(user);
 }
