@@ -1,3 +1,5 @@
+import { logger } from '../lib/logging.js';
+
 // TODO explain these arrows
 export const validate = (schema) => (req, res, next) => {
   const result = schema.safeParse({
@@ -6,8 +8,14 @@ export const validate = (schema) => (req, res, next) => {
     params: req.params,
   });
 
-  console.log(result);
   if (!result.success) {
+    logger.error({
+      error: {
+        name: 'ZodError',
+        issues: result.error.issues,
+      },
+    }, 'Validation Failed');
+
     return res.status(400).json({
       status: 'client error',
       errors: result.error.issues.map((issue) => ({
@@ -16,6 +24,8 @@ export const validate = (schema) => (req, res, next) => {
       })),
     });
   }
+
+  logger.info(result);
   req.validatedData = result.data;
   next();
 };

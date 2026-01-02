@@ -1,5 +1,5 @@
-import * as PrismaModule from '../generated/prisma/index.js';
-const { Prisma } = PrismaModule;
+import { Prisma } from '../generated/prisma/index.js';
+import { logger } from '../lib/logging.js';
 
 export const errorHandler = (err, req, res, next) => {
   // 1. Default values
@@ -32,8 +32,8 @@ export const errorHandler = (err, req, res, next) => {
     message = 'Invalid data provided to the database.';
   }
 
-  console.log(err);
-
+  // console.log(err);
+  logger.error(err);
   // 4. Send the Response
   res.status(statusCode).json({
     status: status,

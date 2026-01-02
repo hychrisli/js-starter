@@ -104,7 +104,7 @@ Integrate your first database and solidify the concept of separation of concerns
     * [x] Async Wrapper/Handler: Understand why try/catch is needed in async Express routes and how to write a catchAsync utility to eliminate boilerplate.
     * [x] Error Middleware: Master the (err, req, res, next) signature and ensure it is the last piece of middleware in your app.js.
   * **Logging & Request Correlation**
-    * [ ] Winston/Pino Setup: Configure a logger that outputs JSON (for machines) in production and pretty-text (for humans) in development.
+    * [x] Winston/Pino Setup: Configure a logger that outputs JSON (for machines) in production and pretty-text (for humans) in development.
     * [ ] The Correlation ID: Use the uuid package to generate a requestId for every incoming request.
     * [ ] Async Context (Advanced): Research AsyncLocalStorage in Node.js to see how to access the requestId in your Service layer without passing it through every function argument.
     * [ ] Log Levels: Learn when to use .info(), .warn(), .error(), and .debug() correctly. 
