@@ -1,7 +1,8 @@
 import { Prisma } from '../generated/prisma/index.js';
-import { logger } from '../lib/logging.js';
+import { getContextLogger } from '../lib/context.js';
 
 export const errorHandler = (err, req, res, next) => {
+  const logger = getContextLogger();
   // 1. Default values
   let statusCode = err.statusCode || 500;
   let message = err.message || 'Internal Server Error';

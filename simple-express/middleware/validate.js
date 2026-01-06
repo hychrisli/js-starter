@@ -1,7 +1,7 @@
-import { logger } from '../lib/logging.js';
-
+import { getContextLogger } from '../lib/context.js';
 // TODO explain these arrows
 export const validate = (schema) => (req, res, next) => {
+  const logger = getContextLogger();
   const result = schema.safeParse({
     body: req.body,
     query: req.query,
