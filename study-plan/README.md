@@ -77,6 +77,7 @@ Integrate your first database and solidify the concept of separation of concerns
       * [x] Initialize Prisma ORM and create a Prisma sqlite database
       * [x] Define your data model `User` and `Post`. Create and apply the Prisma migration
       * [x] Instantiate prisma client. Install npm install @prisma/adapter-libsql @libsql/client when using ESM module format, to connect to sqlite, because by default an adaptor is not provided. Then `import { PrismaLibSql } from '@prisma/adapter-libsql'`
+      * [x] `npx prisma generate` blabla
       * [x] write the a query to create a new user and their posts. Then Fetch all users with their posts
       * [x] Create a dedicated **repository file** (`UserRepository.js`) for database operations.
       * [x] Write an `async` function to initialize/connect to the **SQLite file**.
@@ -108,12 +109,9 @@ Integrate your first database and solidify the concept of separation of concerns
     * [x] The Correlation ID: Use the uuid package to generate a requestId for every incoming request.
     * [x] Async Context (Advanced): Research AsyncLocalStorage in Node.js to see how to access the requestId in your Service layer without passing it through every function argument.
     * [x] Log Levels: Learn when to use .info(), .warn(), .error(), and .debug() correctly. 
-  * **OAuth2**
-    * [ ] Grant Types: Understand the difference between the Authorization Code Flow (for web apps) and Client Credentials Flow (for machine-to-machine).
-    * [ ] The Handshake: Learn the "Redirect to Provider" vs. "Callback" flow.
-    * [ ] Passport.js Strategies: Practice setting up passport-google-oauth20 or passport-github2.
-    * [ ] JWT Integration: Learn how to issue a JWT after the OAuth handshake is successful so the user stays logged in.
-    * [ ] Security Best Practices: Research state parameters (to prevent CSRF) and PKCE (Proof Key for Code Exchange).
+  * **Auth**
+    * [?] Authentication. Set up user login and return access token
+    * [ ] Authorization. Protect endpoints with JWT access token
 -----
 
 ## ✅ Week 6: Testing (Unit & Integration)
